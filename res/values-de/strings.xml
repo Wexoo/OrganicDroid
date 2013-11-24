@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Title -->
+    <string name="title_result">Resultat</string>
+    
+    <!-- Toasts -->
+    <string name="toast_enter_value">Bitte einen Wert eingeben!</string>
+    <string name="toast_enter_value_greater_than_zero">Bitte einen Wert größer als 0 eingeben!</string>
+    
+    <!-- Alerts -->
+    <string name="alert_yes">Ja</string>
+	<string name="alert_no">Nein</string>
+	<string name="alert_neutral">Nie</string>
+	<string name="alert_mobile_network_prefs">Netzwerk Einstellungen</string>
+	<string name="alert_wifi_prefs">WLAN Einstellungen</string>
+	<string name="alert_return">Zurück</string>
+	<string name="alert_exit">App schließen</string>
+    
+</resources>
