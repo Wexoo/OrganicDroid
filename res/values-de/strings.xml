@@ -1,19 +1,100 @@
 <resources>
 
-    <!-- Title -->
-    <string name="title_result">Resultat</string>
-    
-    <!-- Toasts -->
-    <string name="toast_enter_value">Bitte einen Wert eingeben!</string>
-    <string name="toast_enter_value_greater_than_zero">Bitte einen Wert größer als 0 eingeben!</string>
-    
     <!-- Alerts -->
     <string name="alert_yes">Ja</string>
 	<string name="alert_no">Nein</string>
 	<string name="alert_neutral">Nie</string>
-	<string name="alert_mobile_network_prefs">Netzwerk Einstellungen</string>
-	<string name="alert_wifi_prefs">WLAN Einstellungen</string>
+	<string name="alert_no_local_data">Für diese Funktion wird eine Internetverbindung benötigt. Gehe zu…</string>
+	<string name="alert_mobile_network_settings">Netzwerk Einstellungen</string>
+	<string name="alert_wifi_settings">WLAN Einstellungen</string>
 	<string name="alert_return">Zurück</string>
 	<string name="alert_exit">App schließen</string>
+	
+	<!-- Buttons -->
+    <string name="b_call">Anrufen</string>
+	<string name="b_dial_phone_number">Anrufen</string>
+	<string name="b_visit_website">Zur Webseite</string>
+	<string name="b_visit_our_website">Besuche unsere Webseite</string>
+	<string name="b_send_mail">Mail senden</string>
+	<string name="b_send_us_mail">Schreib uns</string>
+	<string name="b_switch_to_intents">Zu <i>Intents</i> wechseln</string>
+	<string name="b_switch_to_search">Zur <i>Suche</i> wechseln</string>
+	<string name="b_choose_date">Nach Datum</string>
+	<string name="b_settings">Einstellungen</string>
+
+	<!-- Constants -->
+	<string name="tv_visit_us"><u>http://www.wexoo.net</u></string>
+	<string name="tv_mail_us"><u>p.weixlbaumer@gmail.com</u></string>
+	<string name="link_paypal_donate" formatted="false"><u>https://www.paypal.com/cgi-bin/webscr?cmd=_donations\u0026business=8VXV9BAUSQZEU\u0026lc=AT\u0026currency_code=EUR\u0026bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted</u></string>
+	
+	<!-- Error messages -->
+	
+	<!-- GPS Dialog -->
+	<string name="gps_dialog_message">GPS ist deaktiviert! Aktivieren?</string>
+	<string name="gps_dialog_enable">Aktiviere GPS</string>
+	<string name="gps_dialog_disable">Abbrechen</string>
+	
+	<!-- Info -->
+	<string name="info_about_us">Über uns</string>
+	<string name="duration_last_update">Dauer der letzten Aktualisierung</string>
+	<string name="info_latest_update">Letzte Aktulisierung</string>
+	<string name="info_no_database">Noch nie aktualisiert</string>
+	<string name="time_entity">Minuten</string>
+	
+	<!-- MenuItems -->
+	<string name="mi_info">App Info</string>
+	<string name="mi_preferences">Einstellungen</string>
+	<string name="close">Zurück</string>
+	<string name="mi_show_details">Details anzeigen</string>
+	<string name="mi_show_on_map">Auf Karte zeigen</string>
+	<string name="mi_start_navigation">Navigation starten</string>
+	<string name="mi_show_surroundings">Umgebung anzeigen</string>
+	<string name="mi_add_to_favorites">Zu Favoriten hinzufügen</string>
+	<string name="mi_remove_from_favorites">Von Favoriten entfernen</string>
+	
+	<!-- Preferences - Summaries -->
+	<string name="pc_general_sum">Basiseinstellungen</string>
+	<string name="lp_access_mode_sum">Aktuelle Art:</string>
+	<string name="lp_language_sum">Aktuelle Sprache:</string>
+	<string name="lp_mode_sum">Aktuell:</string>
+	<string name="lp_update_mode_sum">Aktuelles Verhalten:</string>
+	<string name="p_manual_update_sum">Letzte Aktualisierung:</string>
+	
+	<string name="pc_take_me_home_sum">Deine Adresse - wird nur lokal gespeichert!</string>
+	<string name="b_visit_our_website_sum">Infoseite über diese App</string>
+	<string name="b_send_us_mail_sum">Feedback, Fehler, Biereinladungen,&#8230;</string>
+	<string name="h_powered_by_sum">Vielen Dank an &#8230;</string>
+	<string name="h_info_sum">Einige Statistiken zur App</string>
+	
+	<!-- Preferences - Titles -->
+	<string name="pc_general">Allgemein</string>
+	<string name="lp_access_mode">Zugriffsart</string>
+	<string name="pc_partners">Partner</string>
+	<string name="pc_used_frameworks">Verwendete Frameworks</string>
+	
+    <!-- ProgressDialog -->
+	<string name="progress_dialog_initial_setup_in_progress">Initial app setup in progress… (only needed at first start)</string>
+	<string name="progress_dialog_check_for_update">Check for new data in progress…</string>
+	<string name="progress_dialog_update_in_progress">Data update in progress…</string>
     
+    <!-- TextView -->
+    <string name="tv_menu_handle">Menü</string>
+
+    <!-- Title -->
+    <string name="title_result">Resultat</string>
+    <string name="title_preferences">Einstellungen</string>
+    
+    <!-- Toasts -->
+    <string name="toast_enter_value">Bitte einen Wert eingeben!</string>
+    <string name="toast_enter_value_greater_than_zero">Bitte einen Wert größer als 0 eingeben!</string>
+    <string name="toast_unknown_host">Verbindungsfehler, bitte Internetverbindung überprüfen.</string>
+	<string name="toast_favorite_added">Als Favorit hinzugefügt.</string>
+	<string name="toast_favorite_removed">Favorit wurde entfernt.</string>
+	<string name="toast_migration_started">Daten-Aktualisierung gestartet…</string>
+	<string name="toast_migration_finished">Daten-Aktualisierung in %1$s Minuten abgeschlossen!</string>
+	<string name="toast_no_internet_connection">Keine Internetverbindung. \nLokaler Zugriff aktiviert.</string>
+	<string name="toast_no_data_reveived">Keine Daten empfangen. Keine Verbindung zu Server.</string>
+	<string name="toast_offline_not_supported">Funktion offline nicht verfügbar, bitte Internetverbindung herstellen!</string>
+	<string name="toast_server_problems_update">Diese Funktion ist wegen Server-Problemen vorübergehend nicht verfügbar, wir arbeiten daran diese zu beseitigen! Bitte etwas später nochmal versuchen.</string>
+	<string name="toast_new_update_declined_24h">Daten-Aktualisierung abgelehnt. Aufforderung für 24h deaktiviert!</string>
 </resources>

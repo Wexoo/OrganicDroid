@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item 
+    	android:id="@+id/mi_show_details" 
+    	android:title="@string/mi_show_details" />
+    <item 
+    	android:id="@+id/mi_call" 
+    	android:title="@string/b_call" />
+    <item 
+    	android:id="@+id/mi_show_on_map" 
+    	android:title="@string/mi_show_on_map"/>
+    <item 
+    	android:id="@+id/mi_start_navigation" 
+    	android:title="@string/mi_start_navigation" />
+    <item 
+    	android:id="@+id/mi_show_surroundings"
+    	android:title="@string/mi_show_surroundings" />
+    <item 
+    	android:id="@+id/mi_visit_website" 
+    	android:title="@string/b_visit_website" />
+    <item 
+    	android:id="@+id/mi_send_mail" 
+    	android:title="@string/b_send_mail" />
+    <item 
+    	android:id="@+id/mi_add_to_favorites" 
+    	android:title="@string/mi_add_to_favorites" />
+</menu>

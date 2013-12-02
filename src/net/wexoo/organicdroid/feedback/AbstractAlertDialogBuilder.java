@@ -1,5 +1,5 @@
 /***
- * Copyright (C) 2011 wexoo
+ * Copyright (C) 2013 wexoo
  * p.weixlbaumer@gmail.com
  *
  * This program is free software: you can redistribute it and/or modify
@@ -15,6 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 package net.wexoo.organicdroid.feedback;
 
 import net.wexoo.organicdroid.R;
@@ -24,59 +25,67 @@ import android.content.Context;
 import android.content.DialogInterface;
 
 /**
+ * AbstractAlertDialogBuilder.java
+ * 
  * @author wexoo
  */
 public abstract class AbstractAlertDialogBuilder extends Builder {
-
+	
+	public AbstractAlertDialogBuilder(final Context context, final String message) {
+		this(context, message, R.string.alert_yes, null, R.string.alert_no);
+	}
+	
 	public AbstractAlertDialogBuilder(final Context context, final Integer messageKey) {
-		this(context, messageKey, R.string.alert_yes, null, R.string.alert_no);
+		this(context, context.getString(messageKey), R.string.alert_yes, null, R.string.alert_no);
 	}
-
-	public AbstractAlertDialogBuilder(final Context context, final Integer messageKey, final Integer posButtonKey,
-			final Integer neuButtonKey, final Integer negButtonKey) {
+	
+	public AbstractAlertDialogBuilder(final Context context, final String message, final Integer posButtonKey,
+				final Integer neuButtonKey, final Integer negButtonKey) {
 		super(context);
-
-		this.setMessage(context.getString(messageKey));
+		
+		setMessage(message);
 		setCancelable(false);
-		this.setPositiveButton(context.getString(posButtonKey),
-				new DialogInterface.OnClickListener() {
-
-					@Override
-					public void onClick(final DialogInterface dialog, final int id) {
-						AbstractAlertDialogBuilder.this.positiveButtonAction(context);
-					}
-				});
-
-		if (neuButtonKey != null) {
-			this.setNeutralButton(context.getString(posButtonKey),
-					new DialogInterface.OnClickListener() {
-
-						@Override
-						public void onClick(final DialogInterface dialog, final int id) {
-							AbstractAlertDialogBuilder.this.neutralButtonAction(context);
-						}
-					});
-		}
-		this.setNegativeButton(context.getString(negButtonKey),
-				new DialogInterface.OnClickListener() {
-
-					@Override
-					public void onClick(final DialogInterface dialog, final int id) {
-						AbstractAlertDialogBuilder.this.negativeButtonAction(context);
-						dialog.cancel();
-					}
-				});
+		
+		setPositiveButton(context.getString(posButtonKey), new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(final DialogInterface dialog, final int id) {
+				positiveButtonAction(context);
+			}
+		});
+		if (neuButtonKey != null) setNeutralButton(context.getString(posButtonKey), new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(final DialogInterface dialog, final int id) {
+				neutralButtonAction(context);
+			}
+		});
+		setNegativeButton(context.getString(negButtonKey), new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(final DialogInterface dialog, final int id) {
+				negativeButtonAction(context);
+				dialog.cancel();
+			}
+		});
 	}
-
-	public void showAlertDialog() {
+	
+	public AlertDialog showAlertDialog() {
 		final AlertDialog alert = create();
+		
 		alert.show();
+		
+		return alert;
 	}
-
+	
+	protected static Context getDefaultContext() {
+		return null;
+	}
+	
 	protected abstract void positiveButtonAction(Context context);
-
+	
 	protected void neutralButtonAction(final Context context) {
 	}
-
+	
 	protected abstract void negativeButtonAction(Context context);
 }

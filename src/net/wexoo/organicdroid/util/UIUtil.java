@@ -32,7 +32,7 @@ public class UIUtil {
 	/**
 	 * Invoke "home" action, returning to {@link HomeActivity}.
 	 */
-	public static void goHome(final Context context, Class<?> homeClass) {
+	public static void goToActivityAndClearTop(final Context context, Class<?> homeClass) {
 		final Intent intent = new Intent(context, homeClass);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		context.startActivity(intent);

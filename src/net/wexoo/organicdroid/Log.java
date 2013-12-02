@@ -20,42 +20,32 @@ package net.wexoo.organicdroid;
 /**
  * Log.java - a deactivatable logger class who appears to work the same as the android.util.Log logger
  * 
- * @author Wexoo
+ * @author wexoo
  */
 public class Log {
-
+	
 	/**
 	 * enable/disable logging of app
 	 */
 	private static final boolean LOG = true;
-
+	
 	public static void i(final String tag, final String string) {
-		if (Log.LOG) {
-			android.util.Log.i(tag, string);
-		}
+		if (Log.LOG) android.util.Log.i(tag, string);
 	}
-
+	
 	public static void e(final String tag, final String string) {
-		if (Log.LOG) {
-			android.util.Log.e(tag, string);
-		}
+		if (Log.LOG) android.util.Log.e(tag, string);
 	}
-
+	
 	public static void d(final String tag, final String string) {
-		if (Log.LOG) {
-			android.util.Log.d(tag, string);
-		}
+		if (Log.LOG) android.util.Log.d(tag, string);
 	}
-
+	
 	public static void v(final String tag, final String string) {
-		if (Log.LOG) {
-			android.util.Log.v(tag, string);
-		}
+		if (Log.LOG) android.util.Log.v(tag, string);
 	}
-
+	
 	public static void w(final String tag, final String string) {
-		if (Log.LOG) {
-			android.util.Log.w(tag, string);
-		}
+		if (Log.LOG) android.util.Log.w(tag, string);
 	}
 }

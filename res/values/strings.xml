@@ -2,20 +2,121 @@
 
     <string name="app_name">OrganicDroid</string>
 
-    <!-- Title -->
-    <string name="title_result">Result</string>
-    
-    <!-- Toasts -->
-    <string name="toast_enter_value">Please enter a value!</string>
-    <string name="toast_enter_value_greater_than_zero">Please enter a value greater than zero!</string>
-    
     <!-- Alerts -->
     <string name="alert_yes">Yes</string>
 	<string name="alert_no">No</string>
 	<string name="alert_neutral">Never</string>
-	<string name="alert_mobile_network_prefs">Network Preferences</string>
-	<string name="alert_wifi_prefs">WiFi Preferences</string>
+	<string name="alert_no_local_data">For this feature an internet connection is required. Switch to…</string>
+	<string name="alert_mobile_network_settings">Network settings</string>
+	<string name="alert_wifi_settings">WiFi settings</string>
 	<string name="alert_return">Back</string>
 	<string name="alert_exit">Close app</string>
+	<string name="alert_new_updates_available">New data available!\n
+	    Would you like to update?</string>
+	
+	<!-- Buttons -->
+	<string name="b_call">Call</string>
+	<string name="b_dial_phone_number">Call</string>
+	<string name="b_visit_website">Visit website</string>
+	<string name="b_visit_our_website">Visit our website</string>
+	<string name="b_send_mail">Send mail</string>
+	<string name="b_send_us_mail">Send us a mail</string>
+	<string name="b_switch_to_intents">Switch to <i>intents</i></string>
+	<string name="b_switch_to_search">Switch to <i>search</i></string>
+	<string name="b_choose_date">By Date</string>
+	<string name="b_settings">Settings</string>
+	
+	<!-- Error messages -->
+	
+	<!-- GPS Dialog -->
+	<string name="gps_dialog_message">GPS is disabled! Would you like to enable it?</string>
+	<string name="gps_dialog_enable">Enable GPS</string>
+	<string name="gps_dialog_disable">Cancel</string>
     
+	<!-- Info -->
+	<string name="info_about_us">About Us</string>
+	<string name="duration_last_update">Duration of latest update</string>
+	<string name="info_latest_update">Latest update</string>
+	<string name="info_no_database">Never updated</string>
+	<string name="time_entity">Minutes</string>
+	
+	<!-- MenuItems -->
+	<string name="mi_info">App info</string>
+	<string name="mi_preferences">Settings</string>
+	<string name="mi_show_details">Show details</string>
+	<string name="mi_show_on_map">Show on map</string>
+	<string name="mi_start_navigation">Start navigation</string>
+	<string name="mi_show_surroundings">Show surroundings</string>
+	<string name="mi_add_to_favorites">Add to favorites</string>
+	<string name="mi_remove_from_favorites">Remove from favorites</string>
+	
+	<!-- Preferences - Summaries -->
+	<string name="pc_general_sum">Basic settings</string>
+	<string name="lp_access_mode_sum">Current mode:</string>
+	<string name="lp_language_sum">Current language:</string>
+	<string name="lp_mode_sum">Current:</string>
+	<string name="lp_update_mode_sum">Current behavior:</string>
+	<string name="p_manual_update_sum">Last update:</string>	
+	
+	<string name="pc_take_me_home_sum">Your home address - only saved locally!</string>
+	<string name="b_visit_our_website_sum">Get more info about this app</string>
+	<string name="b_send_us_mail_sum">Send us feedback, bugs, beer invitations&#8230;</string>
+	<string name="h_powered_by_sum">Thanks goes out to&#8230;</string>
+	<string name="h_info_sum">Some stats about the app</string>
+	
+	<!-- Preferences - Titles -->
+	<string name="pc_general">General</string>
+	<string name="lp_access_mode">Access Mode</string>
+	<string name="h_powered_by">Powered by</string>
+	<string name="pc_partners">Partners</string>
+	<string name="pc_used_frameworks">Used frameworks</string>
+		
+    <!-- ProgressDialog -->
+	<string name="progress_dialog_initial_setup_in_progress">Initialisierung der App läuft gerade… (nur beim ersten Start notwendig)</string>
+	<string name="progress_dialog_check_for_update">Überprüfung auf neue Daten läuft gerade…</string>
+	<string name="progress_dialog_update_in_progress">Daten-Aktualisierung läuft gerade…</string>
+    
+    <!-- TextView -->
+    <string name="tv_menu_handle">Menu</string>
+
+    <!-- Title -->
+    <string name="title_result">Result</string>
+    <string name="title_preferences">Settings</string>
+    
+    <!-- Toasts -->
+    <string name="toast_enter_value">Please enter a value!</string>
+    <string name="toast_enter_value_greater_than_zero">Please enter a value greater than zero!</string>
+    <string name="toast_unknown_host">Connection error, please check your internet connection.</string>
+	<string name="toast_favorite_added">Favorite added.</string>
+	<string name="toast_favorite_removed">Favorite removed.</string>
+	<string name="toast_migration_started">Data update started…</string>
+	<string name="toast_migration_finished">Data update finished after %1$s minutes!</string>
+	<string name="toast_no_internet_connection">No Internet connection. \nLocal access enabled.</string>
+	<string name="toast_no_data_reveived">No data received. Maybe no connection to server.</string>
+	<string name="toast_offline_not_supported">This feature isn´t available offline, please connect to the internet!</string>
+	<string name="toast_server_problems_update">This feature is currently unavailable due to server problems, we are sorry and working hard on fixing it! Please check back soon.</string>
+	<string name="toast_new_update_declined_24h">Data update declined. Check is deactivated for 24h!</string>
+
+	<!-- NOT TRANSLATED - only used internal -->
+	<!-- Preferences - Keys -->
+	<string name="lp_access_mode_key">access_mode</string>
+	<string name="p_export_db_to_sd_key">export_db_to_sd</string>
+	<string name="etp_home_street_and_number_key">street_and_streetno</string>
+	<string name="etp_home_zipcode_and_city_key">zipcode_and_city</string>
+	
+	<!-- Preferences - Keys (not shown in preferences menu) -->
+	<string name="last_database_migration_key">last_database_migration</string>
+	<string name="last_database_update_key">last_database_update</string>
+	<string name="database_migration_duration_key">database_migration_duration</string>
+	<string name="key_district_name_for_map">district_name_for_map</string>
+	<string name="key_district_id_for_map">district_id_for_map</string>
+	<string name="key_last_data_update_reminder">last_data_update_reminder</string>
+	
+	<!-- Intent Extras - Keys -->
+	<string name="update_database_with_online_data_key">update_local_database</string>
+	<string name="close_app_key">close_app_key</string>
+	<string name="description_star">star</string>
+		
+	<!-- System -->
+    <string name="open_helper_classname">net.ausgstecktis.DAL.DBHelper</string>
 </resources>

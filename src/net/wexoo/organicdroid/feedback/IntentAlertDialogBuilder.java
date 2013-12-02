@@ -29,89 +29,82 @@ import android.content.Intent;
  * @author wexoo
  */
 public class IntentAlertDialogBuilder extends Builder {
-
+	
 	private final Intent okIntent;
 	private final Intent neutralIntent;
 	private final Intent cancelIntent;
-
+	
 	public IntentAlertDialogBuilder(final Context context, final Intent okIntent, final Intent neutralIntent,
-			final Intent cancelIntent, final Integer message_key) {
+				final Intent cancelIntent, final Integer message_key) {
 		this(context, okIntent, neutralIntent, cancelIntent, message_key, R.string.alert_yes, R.string.alert_neutral,
-				R.string.alert_no, neutralIntent != null);
+					R.string.alert_no, neutralIntent != null);
 	}
-
+	
 	public IntentAlertDialogBuilder(final Context context, final Intent okIntent, final Intent neutralIntent,
-			final Intent cancelIntent,
-			final Integer message_key, final boolean showNeutralButton) {
-		this(context, okIntent, neutralIntent, cancelIntent, message_key, R.string.alert_yes,
-				R.string.alert_neutral, R.string.alert_no, showNeutralButton);
+				final Intent cancelIntent, final Integer message_key, final boolean showNeutralButton) {
+		this(context, okIntent, neutralIntent, cancelIntent, message_key, R.string.alert_yes, R.string.alert_neutral,
+					R.string.alert_no, showNeutralButton);
 	}
-
+	
 	public IntentAlertDialogBuilder(final Context context, final Intent okIntent, final Intent neutralIntent,
-			final Intent cancelIntent,
-			final Integer message_key, final Integer neutral_pos_key) {
-		this(context, okIntent, neutralIntent, cancelIntent, message_key, R.string.alert_yes,
-				neutral_pos_key, R.string.alert_no, true);
+				final Intent cancelIntent, final Integer message_key, final Integer neutral_pos_key) {
+		this(context, okIntent, neutralIntent, cancelIntent, message_key, R.string.alert_yes, neutral_pos_key,
+					R.string.alert_no, true);
+		
 	}
-
+	
 	public IntentAlertDialogBuilder(final Context context, final Intent okIntent, final Intent neutralIntent,
-			final Intent cancelIntent, final Integer message_key, final Integer pos_button_key,
-			final Integer neutral_button_key, final Integer neg_button_key, final boolean showNeutralButton) {
-
+				final Intent cancelIntent, final Integer message_key, final Integer pos_button_key,
+				final Integer neutral_button_key, final Integer neg_button_key, final boolean showNeutralButton) {
+		
 		super(context);
 		this.okIntent = okIntent;
 		this.cancelIntent = cancelIntent;
 		this.neutralIntent = neutralIntent;
-
-		this.setMessage(context.getString(message_key));
+		
+		setMessage(context.getString(message_key));
 		setCancelable(false);
-		this.setPositiveButton(context.getString(pos_button_key),
-				new DialogInterface.OnClickListener() {
-
-					@Override
-					public void onClick(final DialogInterface dialog, final int id) {
-						IntentAlertDialogBuilder.this.positiveButtonAction(context);
-					}
-				});
-		if (showNeutralButton) {
-			this.setNeutralButton(context.getString(neutral_button_key),
-					new DialogInterface.OnClickListener() {
-
-						@Override
-						public void onClick(final DialogInterface dialog, final int id) {
-							IntentAlertDialogBuilder.this.neutralButtonAction(context);
-						}
-					});
-		}
-		this.setNegativeButton(context.getString(neg_button_key),
-				new DialogInterface.OnClickListener() {
-
-					@Override
-					public void onClick(final DialogInterface dialog, final int id) {
-						IntentAlertDialogBuilder.this.negativeButtonAction(dialog, context);
-					}
-				});
+		
+		// Application.
+		// Resources.getSystem().getString(pos_button_key);
+		
+		setPositiveButton(context.getString(pos_button_key), new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(final DialogInterface dialog, final int id) {
+				positiveButtonAction(context);
+			}
+		});
+		if (showNeutralButton)
+			setNeutralButton(context.getString(neutral_button_key), new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(final DialogInterface dialog, final int id) {
+					neutralButtonAction(context);
+				}
+			});
+		setNegativeButton(context.getString(neg_button_key), new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(final DialogInterface dialog, final int id) {
+				negativeButtonAction(dialog, context);
+			}
+		});
 	}
-
+	
 	protected void positiveButtonAction(final Context context) {
-		if (okIntent != null) {
-			context.startActivity(okIntent);
-		}
+		if (okIntent != null) context.startActivity(okIntent);
 	}
-
+	
 	protected void neutralButtonAction(final Context context) {
-		if (neutralIntent != null) {
-			context.startActivity(neutralIntent);
-		}
+		if (neutralIntent != null) context.startActivity(neutralIntent);
 	}
-
+	
 	protected void negativeButtonAction(final DialogInterface dialog, final Context context) {
-		if (cancelIntent != null) {
-			context.startActivity(cancelIntent);
-		}
+		if (cancelIntent != null) context.startActivity(cancelIntent);
 		dialog.cancel();
 	}
-
+	
 	public void showAlertDialog() {
 		final AlertDialog alert = create();
 		alert.show();

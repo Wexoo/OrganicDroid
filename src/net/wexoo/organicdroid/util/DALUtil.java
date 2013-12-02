@@ -22,16 +22,25 @@ package net.wexoo.organicdroid.util;
  * @author wexoo
  */
 public class DALUtil {
-
+	
+	public static boolean getBooleanValueOfString(final String value) {
+		try {
+			return value != null && value.equals("1") ? true : false;
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
 	/**
 	 * Get the database version from API.
 	 * 
 	 * @param appVersionName
-	 *          the version name from this app
+	 *           the version name from this app
 	 * @param apiLevel
-	 *          the api level
+	 *           the api level
 	 * @param apiVersion
-	 *          the api version
+	 *           the api version
 	 * @return the db version as String
 	 * @author wexoo
 	 * @since 1.0.0 Jul 6, 2011
@@ -67,5 +76,5 @@ public class DALUtil {
 	// }
 	// return dbVersion;
 	// }
-
+	
 }
