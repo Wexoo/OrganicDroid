@@ -77,8 +77,6 @@ public class BaseActivity extends Activity implements OnCreatePanelMenuListener,
 			getSupportActionBar().setDisplayShowHomeEnabled(true);
 			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		}
-		
-		checkOnlineStatusAndSwitchModeIfNecessary();
 	}
 	
 	@Override
@@ -158,20 +156,20 @@ public class BaseActivity extends Activity implements OnCreatePanelMenuListener,
 	 * Navigate to different menus - also used from sliding menu
 	 */
 	public void onIconClick(final View v) {
-		switch (Integer.parseInt(v.getTag().toString())) {
-		
-			case 1:
-				Log.d(TAG, "Case 1 selected!");
-				break;
-			
-			case 2:
-				if (checkIfOnline()) {
-					Log.d(TAG, "Case 2 selected!");
-				} else {
-					showMobileNetworkIntent();
-				}
-				break;
-		}
+		// switch (Integer.parseInt(v.getTag().toString())) {
+		//
+		// case 1:
+		// Log.d(TAG, "Case 1 selected!");
+		// break;
+		//
+		// case 2:
+		// if (checkIfOnline()) {
+		// Log.d(TAG, "Case 2 selected!");
+		// } else {
+		// showMobileNetworkIntent();
+		// }
+		// break;
+		// }
 		if (slidingMenu.isMenuShowing()) {
 			slidingMenu.toggle();
 		}

@@ -2,13 +2,13 @@
 <preference-headers
   xmlns:android="http://schemas.android.com/apk/res/android">
   	<header
-		android:fragment="net.ausgstecktis.ui.PreferencesActivity$GeneralPrefs"
+		android:fragment="net.wexoo.organicdroid.PreferencesActivity$GeneralPrefs"
   		android:icon="@drawable/ic_menu_manage"
   		android:title="@string/pc_general"
   		android:summary="@string/pc_general_sum"
   		android:textColor="@color/title_background" />
     <header
-		android:fragment="net.ausgstecktis.ui.PreferencesActivity$AppInfoFragment"
+		android:fragment="net.wexoo.organicdroid.PreferencesActivity$AppInfoFragment"
   		android:icon="@android:drawable/ic_menu_info_details"
   		android:title="@string/mi_info"
   		android:summary="@string/h_info_sum" />
@@ -24,10 +24,10 @@
         android:title="@string/b_send_us_mail"
         android:summary="@string/b_send_us_mail_sum">
         <intent android:action="android.intent.action.VIEW"
-                android:data="mailto:@string/tv_mail_us" />
+                android:data="@string/tv_mail_us" />
     </header>
     <header
-		android:fragment="net.ausgstecktis.ui.PreferencesActivity$PoweredByFragment"
+		android:fragment="net.wexoo.organicdroid.PreferencesActivity$PoweredByFragment"
   		android:icon="@android:drawable/ic_menu_myplaces"
   		android:title="@string/h_powered_by"
   		android:summary="@string/h_powered_by_sum" />

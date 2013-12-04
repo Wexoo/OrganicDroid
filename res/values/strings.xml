@@ -1,6 +1,6 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="app_name">OrganicDroid</string>
+    <string name="app_name" translatable="false">OrganicDroid</string>
 
     <!-- Alerts -->
     <string name="alert_yes">Yes</string>
@@ -10,28 +10,33 @@
 	<string name="alert_mobile_network_settings">Network settings</string>
 	<string name="alert_wifi_settings">WiFi settings</string>
 	<string name="alert_return">Back</string>
-	<string name="alert_exit">Close app</string>
+	<string name="alert_exit" tools:ignore="UnusedResources">Close app</string>
 	<string name="alert_new_updates_available">New data available!\n
 	    Would you like to update?</string>
 	
 	<!-- Buttons -->
 	<string name="b_call">Call</string>
-	<string name="b_dial_phone_number">Call</string>
+	<string name="b_dial_phone_number" tools:ignore="UnusedResources">Call</string>
 	<string name="b_visit_website">Visit website</string>
 	<string name="b_visit_our_website">Visit our website</string>
 	<string name="b_send_mail">Send mail</string>
 	<string name="b_send_us_mail">Send us a mail</string>
-	<string name="b_switch_to_intents">Switch to <i>intents</i></string>
+	<string name="b_switch_to_intents" tools:ignore="UnusedResources">Switch to <i>intents</i></string>
 	<string name="b_switch_to_search">Switch to <i>search</i></string>
-	<string name="b_choose_date">By Date</string>
+	<string name="b_choose_date" tools:ignore="UnusedResources">By Date</string>
 	<string name="b_settings">Settings</string>
+	
+	<!-- Constants -->
+	<string name="tv_visit_us" translatable="false"><u>http://www.wexoo.net</u></string>
+	<string name="tv_mail_us" translatable="false"><u>mailto:p.weixlbaumer@gmail.com</u></string>
+	<string name="link_paypal_donate" translatable="false" formatted="false"><u>https://www.paypal.com/cgi-bin/webscr?cmd=_donations\u0026business=8VXV9BAUSQZEU\u0026lc=AT\u0026currency_code=EUR\u0026bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted</u></string>
 	
 	<!-- Error messages -->
 	
 	<!-- GPS Dialog -->
-	<string name="gps_dialog_message">GPS is disabled! Would you like to enable it?</string>
-	<string name="gps_dialog_enable">Enable GPS</string>
-	<string name="gps_dialog_disable">Cancel</string>
+	<string name="gps_dialog_message" tools:ignore="UnusedResources">GPS is disabled! Would you like to enable it?</string>
+	<string name="gps_dialog_enable" tools:ignore="UnusedResources">Enable</string>
+	<string name="gps_dialog_disable" tools:ignore="UnusedResources">Cancel</string>
     
 	<!-- Info -->
 	<string name="info_about_us">About Us</string>
@@ -40,23 +45,26 @@
 	<string name="info_no_database">Never updated</string>
 	<string name="time_entity">Minutes</string>
 	
-	<!-- MenuItems -->
+	<!-- Label -->
+    <string name="label_home" tools:ignore="UnusedResources">Home</string>
+
+    	<!-- MenuItems -->
 	<string name="mi_info">App info</string>
-	<string name="mi_preferences">Settings</string>
+	<string name="mi_preferences" tools:ignore="UnusedResources">Settings</string>
 	<string name="mi_show_details">Show details</string>
 	<string name="mi_show_on_map">Show on map</string>
 	<string name="mi_start_navigation">Start navigation</string>
 	<string name="mi_show_surroundings">Show surroundings</string>
 	<string name="mi_add_to_favorites">Add to favorites</string>
-	<string name="mi_remove_from_favorites">Remove from favorites</string>
+	<string name="mi_remove_from_favorites" tools:ignore="UnusedResources">Remove from favorites</string>
 	
 	<!-- Preferences - Summaries -->
 	<string name="pc_general_sum">Basic settings</string>
 	<string name="lp_access_mode_sum">Current mode:</string>
-	<string name="lp_language_sum">Current language:</string>
-	<string name="lp_mode_sum">Current:</string>
+	<string name="lp_language_sum" tools:ignore="UnusedResources">Current language:</string>
+	<string name="lp_mode_sum" tools:ignore="UnusedResources">Current:</string>
 	<string name="lp_update_mode_sum">Current behavior:</string>
-	<string name="p_manual_update_sum">Last update:</string>	
+	<string name="p_manual_update_sum" tools:ignore="UnusedResources">Last update:</string>	
 	
 	<string name="pc_take_me_home_sum">Your home address - only saved locally!</string>
 	<string name="b_visit_our_website_sum">Get more info about this app</string>
@@ -67,7 +75,7 @@
 	<!-- Preferences - Titles -->
 	<string name="pc_general">General</string>
 	<string name="lp_access_mode">Access Mode</string>
-	<string name="h_powered_by">Powered by</string>
+	<string name="h_powered_by" translatable="false">Powered by</string>
 	<string name="pc_partners">Partners</string>
 	<string name="pc_used_frameworks">Used frameworks</string>
 		
@@ -99,24 +107,26 @@
 
 	<!-- NOT TRANSLATED - only used internal -->
 	<!-- Preferences - Keys -->
-	<string name="lp_access_mode_key">access_mode</string>
-	<string name="p_export_db_to_sd_key">export_db_to_sd</string>
-	<string name="etp_home_street_and_number_key">street_and_streetno</string>
-	<string name="etp_home_zipcode_and_city_key">zipcode_and_city</string>
+	<string name="lp_access_mode_key" translatable="false">access_mode</string>
+	<string name="p_export_db_to_sd_key" translatable="false">export_db_to_sd</string>
+	<string name="etp_home_street_and_number_key" translatable="false">street_and_streetno</string>
+	<string name="etp_home_zipcode_and_city_key" translatable="false">zipcode_and_city</string>
 	
 	<!-- Preferences - Keys (not shown in preferences menu) -->
-	<string name="last_database_migration_key">last_database_migration</string>
-	<string name="last_database_update_key">last_database_update</string>
-	<string name="database_migration_duration_key">database_migration_duration</string>
-	<string name="key_district_name_for_map">district_name_for_map</string>
-	<string name="key_district_id_for_map">district_id_for_map</string>
-	<string name="key_last_data_update_reminder">last_data_update_reminder</string>
+	<string name="last_database_migration_key" translatable="false">last_database_migration</string>
+	<string name="last_database_update_key" translatable="false">last_database_update</string>
+	<string name="database_migration_duration_key"  translatable="false">database_migration_duration</string>
+	<string name="key_district_name_for_map"  translatable="false">district_name_for_map</string>
+	<string name="key_district_id_for_map"  translatable="false">district_id_for_map</string>
+	<string name="key_last_data_update_reminder"  translatable="false">last_data_update_reminder</string>
 	
 	<!-- Intent Extras - Keys -->
-	<string name="update_database_with_online_data_key">update_local_database</string>
-	<string name="close_app_key">close_app_key</string>
-	<string name="description_star">star</string>
+	<string name="update_database_with_online_data_key"  translatable="false">update_local_database</string>
+	<string name="close_app_key"  translatable="false">close_app_key</string>
+	<string name="description_star"  translatable="false">star</string>
 		
 	<!-- System -->
-    <string name="open_helper_classname">net.ausgstecktis.DAL.DBHelper</string>
+    <string name="open_helper_classname"  translatable="false">net.ausgstecktis.DAL.DBHelper</string>
+    <string name="balloon_item_title" translatable="false">balloon_item_title</string>
+    <string name="balloon_item_snippet" translatable="false">balloon_item_snippet</string>
 </resources>

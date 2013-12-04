@@ -16,6 +16,7 @@
 package net.wexoo.organicdroid.ui.map;
 
 import net.wexoo.organicdroid.R;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -42,6 +43,7 @@ import com.google.android.maps.OverlayItem;
  * 
  * @author Jeff Gilfelt
  */
+@SuppressLint("ViewConstructor")
 public class BalloonOverlayView<Item extends OverlayItem> extends FrameLayout {
 	
 	private final LinearLayout layout;
@@ -49,8 +51,7 @@ public class BalloonOverlayView<Item extends OverlayItem> extends FrameLayout {
 	private final TextView snippet;
 	
 	/**
-	 * @param balloonBottomOffset
-	 *          - The bottom padding (in pixels) to be applied when rendering this view.
+	 * @param balloonBottomOffset - The bottom padding (in pixels) to be applied when rendering this view.
 	 */
 	public BalloonOverlayView(final Context context, final int balloonBottomOffset) {
 		
@@ -85,8 +86,7 @@ public class BalloonOverlayView<Item extends OverlayItem> extends FrameLayout {
 	/**
 	 * Sets the view data from a given overlay item.
 	 * 
-	 * @param item
-	 *          - The overlay item containing the relevant view data (title and snippet).
+	 * @param item - The overlay item containing the relevant view data (title and snippet).
 	 */
 	public void setData(final Item item) {
 		
@@ -94,13 +94,15 @@ public class BalloonOverlayView<Item extends OverlayItem> extends FrameLayout {
 		if (item.getTitle() != null) {
 			this.title.setVisibility(View.VISIBLE);
 			this.title.setText(item.getTitle());
-		} else
+		} else {
 			this.title.setVisibility(View.GONE);
+		}
 		if (item.getSnippet() != null) {
 			this.snippet.setVisibility(View.VISIBLE);
 			this.snippet.setText(item.getSnippet());
-		} else
+		} else {
 			this.snippet.setVisibility(View.GONE);
+		}
 		
 	}
 	

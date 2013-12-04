@@ -51,8 +51,9 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 	// private Preference exportDbPreference;
 	
 	public static SharedPreferences getSharedPrefs() {
-		if (PreferencesActivity.sharedPrefs == null)
+		if (PreferencesActivity.sharedPrefs == null) {
 			PreferencesActivity.sharedPrefs = PreferenceManager.getDefaultSharedPreferences(BaseApplication.mainContext);
+		}
 		return PreferencesActivity.sharedPrefs;
 	}
 	
@@ -134,19 +135,21 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 		
 		public void updateAppInfoViews(PreferenceFragment fragment) {
 			if (!PreferencesActivity.getStringPreference(getActivity(), R.string.last_database_migration_key, null)
-						.equals(""))
+						.equals("")) {
 				fragment.findPreference(getString(R.string.info_latest_update)).setSummary(
 							PreferencesActivity.getStringPreference(getActivity(), R.string.last_database_migration_key, null));
-			// else
-			// ((TextView) findViewById(R.id.tv_local_database_version)).setText(R.string.info_no_database);
+				// else
+				// ((TextView) findViewById(R.id.tv_local_database_version)).setText(R.string.info_no_database);
+			}
 			
 			if (!PreferencesActivity.getStringPreference(getActivity(), R.string.database_migration_duration_key, null)
-						.equals(""))
+						.equals("")) {
 				fragment.findPreference(getString(R.string.duration_last_update)).setSummary(
 							PreferencesActivity.getStringPreference(getActivity(), R.string.database_migration_duration_key, null)
 										+ " " + getText(R.string.time_entity));
-			// else
-			// ((TextView) findViewById(R.id.tv_duration_last_update)).setText(R.string.info_no_database);
+				// else
+				// ((TextView) findViewById(R.id.tv_duration_last_update)).setText(R.string.info_no_database);
+			}
 		}
 		
 	}
@@ -159,7 +162,9 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 		String value = "";
 		
 		try {
-			if (keyCode != null) key = appContext.getString(keyCode);
+			if (keyCode != null) {
+				key = appContext.getString(keyCode);
+			}
 			
 			value = PreferencesActivity.getSharedPrefs().getString(key, "");
 		} catch (final Exception e) {
@@ -170,7 +175,9 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 	}
 	
 	public static void setStringPreference(final Context appContext, final Integer keyCode, String key, final String value) {
-		if (keyCode != null) key = appContext.getString(keyCode);
+		if (keyCode != null) {
+			key = appContext.getString(keyCode);
+		}
 		final Editor e = PreferencesActivity.getSharedPrefs().edit();
 		e.putString(key, value);
 		e.commit();
@@ -179,24 +186,27 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 	@Override
 	public void onSharedPreferenceChanged(final SharedPreferences sharedPreferences, final String key) {
 		// INSERT additional actions on certain preference change here!
-		if (key.equals(PreferencesActivity.LP_ACCESS_MODE_KEY))
-		// Log.d(PreferencesActivity.TAG, "access mode changed - onSharedPreferenceChanged");
-		// ProxyFactory.ACCESS_MODE_CHANGED = true;
+		if (key.equals(PreferencesActivity.LP_ACCESS_MODE_KEY)) {
+			// Log.d(PreferencesActivity.TAG, "access mode changed - onSharedPreferenceChanged");
+			// ProxyFactory.ACCESS_MODE_CHANGED = true;
 			updateSummary(PreferencesActivity.LP_ACCESS_MODE_KEY);
+		}
 	}
 	
 	private void updateSummary(final String key) {
-		if (key.equals(PreferencesActivity.LP_ACCESS_MODE_KEY))
+		if (key.equals(PreferencesActivity.LP_ACCESS_MODE_KEY)) {
 			accessModePreference.setSummary(getResources().getString(R.string.lp_access_mode_sum) + " "
 						+ accessModePreference.getEntry().toString());
+		}
 	}
 	
 	protected void exportDatabase() {
-		if (((BaseApplication) getApplication()).isExternalStorageAvailable())
+		if (((BaseApplication) getApplication()).isExternalStorageAvailable()) {
 			Log.d(TAG, "Start exporting db here!");
-		// new ExportDatabaseFileTask().execute();
-		else
+			// new ExportDatabaseFileTask().execute();
+		} else {
 			UIUtil.showShortToast(this, "External storage is not available, unable to export data.");
+		}
 	}
 	
 	// @Override

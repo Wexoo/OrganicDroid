@@ -9,6 +9,8 @@
 	<string name="alert_wifi_settings">WLAN Einstellungen</string>
 	<string name="alert_return">Zurück</string>
 	<string name="alert_exit">App schließen</string>
+	<string name="alert_new_updates_available">Neue Daten verfügbar!\n
+	    Update durchführen?</string>
 	
 	<!-- Buttons -->
     <string name="b_call">Anrufen</string>
@@ -22,11 +24,6 @@
 	<string name="b_choose_date">Nach Datum</string>
 	<string name="b_settings">Einstellungen</string>
 
-	<!-- Constants -->
-	<string name="tv_visit_us"><u>http://www.wexoo.net</u></string>
-	<string name="tv_mail_us"><u>p.weixlbaumer@gmail.com</u></string>
-	<string name="link_paypal_donate" formatted="false"><u>https://www.paypal.com/cgi-bin/webscr?cmd=_donations\u0026business=8VXV9BAUSQZEU\u0026lc=AT\u0026currency_code=EUR\u0026bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted</u></string>
-	
 	<!-- Error messages -->
 	
 	<!-- GPS Dialog -->
@@ -41,10 +38,12 @@
 	<string name="info_no_database">Noch nie aktualisiert</string>
 	<string name="time_entity">Minuten</string>
 	
+	<!-- Label -->
+    <string name="label_home">Home</string>
+	
 	<!-- MenuItems -->
 	<string name="mi_info">App Info</string>
 	<string name="mi_preferences">Einstellungen</string>
-	<string name="close">Zurück</string>
 	<string name="mi_show_details">Details anzeigen</string>
 	<string name="mi_show_on_map">Auf Karte zeigen</string>
 	<string name="mi_start_navigation">Navigation starten</string>

@@ -21,6 +21,7 @@ package net.wexoo.organicdroid.slidemenu;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -30,6 +31,7 @@ import android.widget.RelativeLayout;
  * 
  * @author wexoo
  */
+@SuppressLint("ViewConstructor")
 public class BaseSlideMenuView extends RelativeLayout {
 	
 	protected List<MenuItemBean> menuItems = new ArrayList<MenuItemBean>();;

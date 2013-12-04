@@ -17,11 +17,11 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
-	<string-array name="lp_access_modes">
+	<string-array name="lp_access_modes" translatable="false">
 		<item>online</item>
 		<item>offline</item>
 	</string-array>
-	<string-array name="lp_access_mode_strings">
+	<string-array name="lp_access_mode_strings" translatable="false">
 		<item>Online</item>
 		<item>Offline</item>
 	</string-array>

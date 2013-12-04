@@ -18,13 +18,13 @@
 
 package net.wexoo.organicdroid.adapter;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
 import net.wexoo.organicdroid.Log;
 import android.content.Context;
 import android.database.Cursor;
+import android.util.SparseIntArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AlphabetIndexer;
@@ -48,7 +48,7 @@ public class SearchResultAlphabetizedAdapter extends SimpleCursorAdapter impleme
 	private static final int TYPE_COUNT = 2;
 	private final AlphabetIndexer indexer;
 	private final int[] usedSectionNumbers;
-	private final Map<Integer, Integer> sectionToOffset;
+	private final SparseIntArray sectionToOffset;
 	private final Map<Integer, Integer> sectionToPosition;
 	private final Context context;
 	
@@ -58,8 +58,8 @@ public class SearchResultAlphabetizedAdapter extends SimpleCursorAdapter impleme
 		this.context = context;
 		indexer = new AlphabetIndexer(c, c.getColumnIndexOrThrow(SORT_NAME_COLUMN), "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 		sectionToPosition = new TreeMap<Integer, Integer>(); // use a TreeMap because we are going to iterate over its
-																				// keys in sorted order
-		sectionToOffset = new HashMap<Integer, Integer>();
+		// keys in sorted order
+		sectionToOffset = new SparseIntArray();
 		
 		final int count = super.getCount();
 		Log.i(SearchResultAlphabetizedAdapter.TAG, "---->" + count);
@@ -67,8 +67,9 @@ public class SearchResultAlphabetizedAdapter extends SimpleCursorAdapter impleme
 		
 		// temporarily have a map alphabet section to first index it appears
 		// (this map is going to be doing something else later)
-		for (i = count - 1; i >= 0; i--)
+		for (i = count - 1; i >= 0; i--) {
 			sectionToPosition.put(indexer.getSectionForPosition(i), i);
+		}
 		
 		i = 0;
 		usedSectionNumbers = new int[sectionToPosition.keySet().size()];
@@ -82,17 +83,18 @@ public class SearchResultAlphabetizedAdapter extends SimpleCursorAdapter impleme
 		}
 		
 		// use offset to map the alphabet sections to their actual indices in the list
-		for (final Integer section : sectionToPosition.keySet())
+		for (final Integer section : sectionToPosition.keySet()) {
 			sectionToPosition.put(section, sectionToPosition.get(section) + sectionToOffset.get(section));
+		}
 	}
 	
 	@Override
 	public int getCount() {
 		if (super.getCount() != 0)
-		// sometimes your data set gets invalidated. In this case getCount()
-		// should return 0 and not our adjusted count for the headers.
-		// The only way to know if data is invalidated is to check if
-		// super.getCount() is 0.
+			// sometimes your data set gets invalidated. In this case getCount()
+			// should return 0 and not our adjusted count for the headers.
+			// The only way to know if data is invalidated is to check if
+			// super.getCount() is 0.
 			return super.getCount() + usedSectionNumbers.length;
 		
 		return 0;
@@ -101,8 +103,8 @@ public class SearchResultAlphabetizedAdapter extends SimpleCursorAdapter impleme
 	@Override
 	public Object getItem(final int position) {
 		if (getItemViewType(position) == SearchResultAlphabetizedAdapter.TYPE_NORMAL)
-		// if the list item is not a header, then we fetch the data set item with the same position
-		// off-setted by the number of headers that appear before the item in the list
+			// if the list item is not a header, then we fetch the data set item with the same position
+			// off-setted by the number of headers that appear before the item in the list
 			return super.getItem(position - sectionToOffset.get(getSectionForPosition(position)) - 1);
 		
 		return null;
@@ -110,7 +112,7 @@ public class SearchResultAlphabetizedAdapter extends SimpleCursorAdapter impleme
 	
 	@Override
 	public int getPositionForSection(final int section) {
-		if (!sectionToOffset.containsKey(section)) {
+		if (sectionToOffset.get(section) == 0) {
 			// This is only the case when the FastScroller is scrolling,
 			// and so this section doesn't appear in our data set. The implementation
 			// of Fastscroller requires that missing sections have the same index as the
@@ -124,9 +126,11 @@ public class SearchResultAlphabetizedAdapter extends SimpleCursorAdapter impleme
 			// linear scan over the sections (constant number of these) that appear in the
 			// data set to find the first used section that is greater than the given section, so in the
 			// example D and E correspond to F
-			while (i < maxLength && section > usedSectionNumbers[i])
+			while (i < maxLength && section > usedSectionNumbers[i]) {
 				i++;
-			if (i == maxLength) return getCount(); // the given section is past all our data
+			}
+			if (i == maxLength)
+				return getCount(); // the given section is past all our data
 				
 			return indexer.getPositionForSection(usedSectionNumbers[i]) + sectionToOffset.get(usedSectionNumbers[i]);
 		}
@@ -141,8 +145,9 @@ public class SearchResultAlphabetizedAdapter extends SimpleCursorAdapter impleme
 		
 		// linear scan over the used alphabetical sections' positions
 		// to find where the given section fits in
-		while (i < maxLength && position >= sectionToPosition.get(usedSectionNumbers[i]))
+		while (i < maxLength && position >= sectionToPosition.get(usedSectionNumbers[i])) {
 			i++;
+		}
 		return usedSectionNumbers[i - 1];
 	}
 	
@@ -193,15 +198,15 @@ public class SearchResultAlphabetizedAdapter extends SimpleCursorAdapter impleme
 	
 	@Override
 	public boolean isEnabled(final int position) {
-		if (getItemViewType(position) == SearchResultAlphabetizedAdapter.TYPE_HEADER) return false;
+		if (getItemViewType(position) == SearchResultAlphabetizedAdapter.TYPE_HEADER)
+			return false;
 		return true;
 	}
 	
 	/**
 	 * Gets the real position.
 	 * 
-	 * @param position
-	 *           the position
+	 * @param position the position
 	 * @return the real position
 	 */
 	public int getRealPosition(final int position) {
